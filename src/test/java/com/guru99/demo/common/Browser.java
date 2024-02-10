@@ -11,7 +11,8 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 import java.util.concurrent.TimeUnit;
 
 public class Browser extends Driver{
-
+// What browser will execute
+    //2. define launchbrowser
 
     private WebDriver initChrome() {
         WebDriverManager.chromedriver().setup();
