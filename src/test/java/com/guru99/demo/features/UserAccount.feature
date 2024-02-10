@@ -5,7 +5,8 @@ Feature: Create New User Account
   so that i can use the available features on this website.
 
 #Background:
-#  Given I navigate to Guru99 home page
+  Scenario: launch the site
+  Given I navigate to Guru99 home page
 #  And I click on AcceptAll button on Manage your Privacy
 #===================================================================
 #Scenario No.1:
@@ -21,8 +22,8 @@ Feature: Create New User Account
 #    Examples:
 #      |Email ID                  |
 #      |shaikkh12223344@gmail.com |
-##   |turaid4321@outlook.com|
-#
+#      |turaid4321@outlook.com|
+
 ##===================================================================
 ##Scenario No.2:
 #  @DeleteUserAccount
@@ -38,7 +39,7 @@ Feature: Create New User Account
 #
 #
 ##===================================================================
-##Scenario No.3:
+#Scenario No.3:
 #  @newUserCredential
 #  Scenario Outline: New User credential are generated using e-mail and user move back to Bank Home page
 #    Given I navigate to Guru99Com-popup page

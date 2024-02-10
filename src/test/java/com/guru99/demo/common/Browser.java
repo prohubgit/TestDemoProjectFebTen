@@ -11,70 +11,74 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 import java.util.concurrent.TimeUnit;
 
 public class Browser extends Driver{
-    // Method for Initializing Browsers
-    private WebDriver initChrome(){
+
+
+    private WebDriver initChrome() {
         WebDriverManager.chromedriver().setup();
         return new ChromeDriver();
     }
-
-    private WebDriver initHeadlessChrome(){
+    private WebDriver initHeadlessChrome() {
         WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--disable-gpu","--headless");
+        options.addArguments("--disable-gpu", "--headless");
         return new ChromeDriver(options);
     }
-    private WebDriver initFirefox(){
+
+
+    private WebDriver initFirefox() {
         WebDriverManager.firefoxdriver().setup();
         return new FirefoxDriver();
     }
 
-    private WebDriver initHeadlessFirefox(){
+    private WebDriver initHeadlessFirefox() {
         WebDriverManager.firefoxdriver().setup();
         FirefoxOptions options = new FirefoxOptions();
-        options.addArguments("--disable-gpu","--headless");
+        options.addArguments("--disable-gpu", "--headless");
         return new FirefoxDriver(options);
 
-    }private WebDriver initInternetExplorer(){
+    }
+
+    private WebDriver initInternetExplorer() {
         WebDriverManager.iedriver().setup();
         return new InternetExplorerDriver();
     }
-
-
-    // Methods for Launching browser
     public void launchBrowser(String browser){
-        switch (browser){
+
+        switch (browser) {
             case "Chrome":
                 driver = initChrome();
                 break;
             case "HeadlessChrome":
                 driver = initHeadlessChrome();
                 break;
+
             case "Firefox":
                 driver = initFirefox();
                 break;
-            case "HeadlessFirefox":
+            case "HeadlessFirfox":
                 driver = initHeadlessFirefox();
                 break;
+            case "IE" :
             case "ie":
-            case "internetexplorer":
             case "InternetExplorer":
+            case "internetexplorer":
                 driver = initInternetExplorer();
                 break;
             default:
                 driver = initChrome();
         }
+
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+        driver.manage().timeouts().pageLoadTimeout(25, TimeUnit.SECONDS);
     }
-    // Methods for closeing browser
+
     public void closeBrowser(){
-        driver.manage().deleteAllCookies();
+        //this method is commited due to logical error in one of the script
+        //driver.manage().deleteAllCookies();
         driver.quit();
+
     }
-
-
-
 
 
 }
