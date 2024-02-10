@@ -6,8 +6,8 @@ Feature: Create New User Account
 
 #Background:
   Scenario: launch the site
-  Given I navigate to Guru99 home page
-#  And I click on AcceptAll button on Manage your Privacy
+    Given I navigate to Guru99 home page
+    And I click on AcceptAll button on Manage your Privacy
 #===================================================================
 #Scenario No.1:
 #  @userAccount
@@ -39,18 +39,18 @@ Feature: Create New User Account
 #
 #
 ##===================================================================
-#Scenario No.3:
-#  @newUserCredential
-#  Scenario Outline: New User credential are generated using e-mail and user move back to Bank Home page
-#    Given I navigate to Guru99Com-popup page
-#    When I click on here link
-#    And I enter user "<Email ID>" in to Email ID field
-#    And I click on SubmitBttn button
-#    And User ID and Password are displayed after few seconds
-#    Then user closed all open tabs and move back to Bank HomePage.
-#
-#    Examples:
-#      |Email ID                  |
-#      |shaikkh12223344@gmail.com |
+Scenario No.3:
+  @newUserCredential
+  Scenario Outline: New User credential are generated using e-mail and user move back to Bank Home page
+    Given I navigate to Guru99Com-popup page
+    When I click on here link
+    And I enter user "<Email ID>" in to Email ID field
+    And I click on SubmitBttn button
+    And User ID and Password are displayed after few seconds
+    Then user closed all open tabs and move back to Bank HomePage.
+
+    Examples:
+      |Email ID                  |
+      |shaikkh12223344@gmail.com |
 #    #===================================================================
 ##Scenario No.1:
