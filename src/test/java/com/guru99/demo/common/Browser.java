@@ -41,7 +41,7 @@ public class Browser extends Driver{
 
 
     // Methods for Launching browser
-    public void LaunchBrowser(String browser){
+    public void launchBrowser(String browser){
         switch (browser){
             case "Chrome":
                 driver = initChrome();
@@ -67,8 +67,8 @@ public class Browser extends Driver{
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
     }
-    // Methods for Closeing browser
-    public void CloseBrowser(){
+    // Methods for closeing browser
+    public void closeBrowser(){
         driver.manage().deleteAllCookies();
         driver.quit();
     }
